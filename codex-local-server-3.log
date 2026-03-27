@@ -1,0 +1,12 @@
+[startup] Inicializando servidor. {
+  db_client: 'sqlite',
+  database_url_present: false,
+  max_upload_size_mb: 25,
+  max_concurrent_jobs: 5
+}
+[startup] Servidor HTTP iniciado. {
+  port: 10000,
+  base_url: 'http://localhost:10000',
+  db_client: 'sqlite'
+}
+[startup] Migracao legada SQLite -> Postgres concluida.

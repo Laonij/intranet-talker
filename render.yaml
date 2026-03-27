@@ -1,0 +1,39 @@
+﻿services:
+  - type: web
+    name: talkers-intranet-chat
+    env: node
+    plan: starter
+    buildCommand: npm install
+    startCommand: npm start
+    autoDeploy: true
+    disk:
+      name: data
+      mountPath: /var/data
+      sizeGB: 1
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      - key: DB_CLIENT
+        value: postgres
+      - key: DATA_DIR
+        value: /var/data
+      - key: INDEX_FOLDER
+        value: /var/data/kb
+      - key: JWT_SECRET
+        generateValue: true
+      - key: ADMIN_EMAIL
+        value: admin@talkers.com
+      - key: ADMIN_NAME
+        value: Admin
+      - key: ADMIN_PASSWORD
+        generateValue: true
+      - key: OPENAI_MODEL
+        value: gpt-4o-mini
+      - key: OPENAI_ARTIFACT_MODEL
+        value: gpt-4.1-mini
+      - key: OPENAI_IMAGE_MODEL
+        value: gpt-image-1
+      - key: OPENAI_VECTOR_STORE_ID
+        value: vs_xxxxxxxxxxxxxxxxxxxx
+      - key: BASE_URL
+        value: https://SEU-SERVICO.onrender.com
